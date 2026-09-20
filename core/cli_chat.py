@@ -4,7 +4,7 @@ from anthropic.types import MessageParam
 
 from core.chat import Chat
 from core.claude import Claude
-from mcp_client import MCPClient
+from MCP.mcp_client import MCPClient
 
 
 class CliChat(Chat):

@@ -97,14 +97,14 @@ Commands will auto-complete when you press Tab.
 
 ### Adding New Documents
 
-Edit the `mcp_server.py` file to add new documents to the `docs` dictionary.
+Edit the `MCP/mcp_server.py` file to add new documents to the `docs` dictionary.
 
 ### Implementing MCP Features
 
 To fully implement the MCP features:
 
-1. Complete the TODOs in `mcp_server.py`
-2. Implement the missing functionality in `mcp_client.py`
+1. Complete the TODOs in `MCP/mcp_server.py`
+2. Implement the missing functionality in `MCP/mcp_client.py`
 
 ### Linting and Typing Check
 

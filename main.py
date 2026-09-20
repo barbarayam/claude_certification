@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 from contextlib import AsyncExitStack
 
-from mcp_client import MCPClient
+from MCP.mcp_client import MCPClient
 from core.claude import Claude
 
 from core.cli_chat import CliChat
@@ -30,9 +30,9 @@ async def main():
     clients = {}
 
     command, args = (
-        ("uv", ["run", "mcp_server.py"])
+        ("uv", ["run", "MCP/mcp_server.py"])
         if os.getenv("USE_UV", "0") == "1"
-        else ("python", ["mcp_server.py"])
+        else ("python", ["MCP/mcp_server.py"])
     )
 
     async with AsyncExitStack() as stack:
