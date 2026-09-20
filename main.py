@@ -13,8 +13,8 @@ from core.cli import CliApp
 load_dotenv()
 
 # Anthropic Config
-claude_model = os.getenv("CLAUDE_MODEL", "")
-anthropic_api_key = os.getenv("ANTHROPIC_API_KEY", "")
+claude_model = os.getenv("CLAUDE_MODEL", "").strip()
+anthropic_api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
 
 
 assert claude_model, "Error: CLAUDE_MODEL cannot be empty. Update .env"
@@ -24,7 +24,7 @@ assert anthropic_api_key, (
 
 
 async def main():
-    claude_service = Claude(model=claude_model)
+    claude_service = Claude(model=claude_model, api_key=anthropic_api_key)
 
     server_scripts = sys.argv[1:]
     clients = {}
@@ -60,6 +60,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    if sys.platform == "win32":
-        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
     asyncio.run(main())
